@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope Sentry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Scope creep demo</p>
+          <h1>Scope Sentry</h1>
+          <p class="lede">
+            A tiny tracker that compares the original brief against incoming asks and
+            flags when the work starts drifting. When the drift is real, it generates a
+            change-order draft before the freelancer keeps bleeding hours.
+          </p>
+        </div>
+        <div class="alert">
+          <span class="alert-label">Drift status</span>
+          <strong id="drift-status">Monitoring</strong>
+          <p id="drift-note">No deviation detected yet.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Original brief</h2>
+            <button id="load-btn">Load request thread</button>
+          </div>
+          <div id="brief-list" class="cards"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Current request log</h2>
+            <span class="pill">Live tracking</span>
+          </div>
+          <div id="request-list" class="cards"></div>
+        </article>
+      </section>
+
+      <section class="panel wide">
+        <div class="panel-head">
+          <h2>Change order draft</h2>
+          <span class="pill subtle">Auto-generated</span>
+        </div>
+        <div id="change-order" class="draft"></div>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <article class="item">
+        <div class="item-top">
+          <strong></strong>
+          <span class="tag"></span>
+        </div>
+        <p></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
